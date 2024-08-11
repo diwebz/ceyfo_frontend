@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Ceyfo, where European fusion meets culinary artistry. Our menu is a vibrant blend of flavors, crafted to delight your palate with every bite. Indulge in our elegant dishes, savor our expertly mixed cocktails, and enjoy a perfect cup of coffee in a sophisticated setting. At Ceyfo, we turn every meal into a memorable experience.">
+  <meta name="keywords" content="CeyFo, CeyFo, Parnell, Bistro, Bar, Coffee, Breakfast, Lunch, Dinner">
+  <meta name="theme-name" content="CeyFo - Parnell" />
+	<meta property="og:title" content="CeyFo - Parnell" />
+	<meta property="og:description" content="CeyFo - Parnell" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.ceyfo.co.nz/" />
+	<meta property="og:image" content="https://www.ceyfo.co.nz/ogp.png" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="500" />
+	<meta property="og:image:height" content="262" />
+	<meta property="og:image:alt" content="CeyFo - Parnell" />
+  <title>CeyFo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- favicon -->
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Static Navbar Header should be position fixed top 0 when scroll down -->
+    <header>
+      <div class="header-container" x-data="{ menuOpen: false, activeNav: '' }" @click.outside="menuOpen = false">
+        <div class="header-logo">
+          <a href="./" class="header-logo-link">
+            <img src="/images/ceyfo-logo-text.svg" alt="CeyFo Logo">
+            <!-- <span class="logo-text">CeyFo</span> -->
+          </a>
+        </div>
+
+        <div class="nav-content" :class="menuOpen ? 'menu-open' : ''">
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a class="nav-link" href="#about" @click="activeNav = 'about', menuOpen = false" :class="{ 'active': activeNav === 'about' }">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#menu" @click="activeNav = 'menu', menuOpen = false" :class="{ 'active': activeNav === 'menu' }">Menu</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#" @click="activeNav = 'reservations', menuOpen = false" :class="{ 'active': activeNav === 'reservations' }">Reservations</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="#contact" @click="activeNav = 'contact', menuOpen = false" :class="{ 'active': activeNav === 'contact' }">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="nav-social">
+            <ul class="nav-social-list">
+              <li class="nav-social-item">
+                <a href="https://www.instagram.com/ceyfo.parnell?igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="nav-social-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#ffffff" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg>
+                </a>
+              </li>
+              <li class="nav-social-item">
+                <a href="https://www.facebook.com/profile.php?id=61562874516814&mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" class="nav-social-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#ffffff" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
+                </a>
+              </li>
+              <li class="nav-social-item">
+                <a href="#" class="nav-social-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 16 16"><path fill="#ffffff" d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z"/></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nav-item-contact">
+            <a href="#" class="nav-item-reserve pc-only">Reservations</a>
+            <a href="tel:+6495585190" class="nav-item-phone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="#ffffff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"/></svg>
+            </a>
+        </div>
+
+        <button class="nav-menu-btn" @click="menuOpen = !menuOpen">
+            <!-- <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path x-show="menuOpen" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path>
+                <path x-show="!menuOpen" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+            </svg> -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <!-- X Icon (Close) -->
+              <path
+                  x-show="menuOpen"
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-dasharray="12"
+                  stroke-dashoffset="12"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  d="M12 12L19 19M12 12L5 5M12 12L5 19M12 12L19 5"
+              >
+                  <animate
+                      fill="freeze"
+                      attributeName="stroke-dashoffset"
+                      dur="0.4s"
+                      values="12;0"
+                  />
+              </path>
+          
+              <!-- Hamburger Icon (Menu) -->
+              <path
+                  x-show="!menuOpen"
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-linecap="round"
+                  stroke-width="1.5"
+                  d="M4 7h3m13 0h-9m9 10h-3M4 17h9m-9-5h16"
+              />
+          </svg>
+        </button>
+    </div>
+  </header>
+
+  <!-- Main Visual Hero Section with Fade-in Fade-out Image Slider -->
+  <section class="hero-section">
+    <div x-data="{ currentImage: 0, images: ['./images/mv/image1.jpg', './images/mv/image2.jpg', './images/mv/image3.jpg'] }" class="hero-slider">
+      <template x-for="(image, index) in images" :key="index">
+        <div x-show="currentImage === index" class="fade hero-bg" :style="'background-image: url(' + image + ')'"></div>
+          </template>
+      <div x-init="setInterval(() => currentImage = (currentImage + 1) % images.length, 10000)" class="absolute inset-0"></div>
+      <div class="hero-caption">
+        
+        <h1>We Serve Passion</h1>
+        <p class="hero-text">
+          Savor the Flavors of Breakfast, Coffee, Lunch, Dinner, and a Lively Bar. <br class="pc-only">Experience Culinary Delight All Day, Every Day!
+        </p>
+        <a href="#menu" class="btn-primary btn-menu">Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Online reservation Section -->
+  <!-- <section id="book-table" class="book-table">
+    <div class="booking-container" x-data="{ moreThan8: false }">
+      <div class="reservation-form">
+        <h2 class="reservation-title">Online Reservations</h2>
+        <p class="reservation-text">Reservations also can be made through phone.</p>
+          <form>
+              <div class="form-group">
+                <div class="form-group-col">
+                  <input type="text" class="form-input" name="name" placeholder="Name">
+                </div>
+                <div class="form-group-col">
+                  <input type="tel" class="form-input" name="phone"  placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                </div>
+              </div> -->
+              <!-- <div class="form-group">
+                <input type="email" class="form-input" placeholder="Email">
+              </div> -->
+              <!-- <div class="form-group">
+                <div class="form-group-col">
+                  <select class="form-select" name="head-count" x-on:change="moreThan8 = $event.target.value === 'more'">
+                      <option value="">How many person?</option>
+                      <option value="1">1 person</option>
+                      <option value="2">2 persons</option>
+                      <option value="3">3 persons</option>
+                      <option value="4">4 persons</option>
+                      <option value="5">5 persons</option>
+                      <option value="6">6 persons</option>
+                      <option value="7">7 persons</option>
+                      <option value="8">8 persons</option>
+                      <option value="more">More than 8</option>
+                  </select>
+                </div>
+                <div class="form-group-col">
+                  <input type="date" name="reserve-date" class="form-input">
+                </div>
+                <div class="form-group-col">
+                  <input type="time" name="reserve-time" class="form-input">
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-textarea" rows="4" name="reserve-note" placeholder="Notes"></textarea>
+              </div>
+              <button type="button" class="btn-tertiary" x-show="!moreThan8">Book</button>
+              <p x-show="moreThan8" class="text-red-500">Please contact the Restaurant</p>
+          </form>
+      </div>
+      <div class="reservation-contact">
+        <h3 class="reservation-contact-title">Contact Us</h3>
+        <div class="reservation-contact-info">
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Booking Requests </h4>
+            <p class="work-hrs-phn">+64(123)-456-7899</p>
+            <p class="work-hrs-text">Opens 7.00am to 11.00pm</p>
+            <p class="work-hrs-text">Closed on Mondays</p>
+          </div>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Breakfast Time </h4>
+            <p class="work-hrs-text">7.00am to 10.00am</p>
+          </div>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Lunch Time </h4>
+            <p class="work-hrs-text">11.00am to 3.00pm</p>
+          </div>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Dinner Time </h4>
+            <p class="work-hrs-text">6.00pm to 10.00pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Our Story Section -->
+  <section id="about" class="our-story">
+    <div class="section-content">
+      <h2 class="section-title">Who We Are</h2>
+      <p class="story-text">
+        Welcome to Ceyfo, where European fusion meets culinary artistry. Our menu is a vibrant blend of flavors, crafted to delight your palate with every bite. Indulge in our elegant dishes, savor our expertly mixed cocktails, and enjoy a perfect cup of coffee in a sophisticated setting. At Ceyfo, we turn every meal into a memorable experience.
+      </p>
+      <a href="#" class="btn-primary btn-menu link-blank">Our Location</a>
+    </div>
+  </section>
+
+  <!-- Caption with background image -->
+  <section class="caption-section caption-sec-1">
+    <div class="section-content">
+      <p class="caption-text">
+        We craft unforgettable experiences with exceptional food, delightful drinks, and warm hospitality. Every meal and drink is made with care, ensuring each visit becomes a cherished memory.
+      </p>      
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu py-12 bg-white">
+    <div class="section-content mx-auto px-6">
+        <h2 class="section-title">Our Finest Menu</h2>
+        <p class="menu-intro">Explore our menu for a variety of flavorful dishes and refreshing drinks, all crafted to satisfy your cravings.</p>
+        <div x-data="{ selectedMenu: '' }" class="menu-list-wrap">
+            <div class="menu-list">
+              <div @click="selectedMenu = 'coffee'" :class="selectedMenu === 'coffee' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn">
+                <div class="menu-btn-content">
+                  <figure class="menu-btn-img">
+                    <img src="./images/menu/coffee-btn.jpg" alt="CeyFo The Cafe">
+                  </figure>
+                  <div class="menu-btn-text">
+                    Coffee
+                    <span class="menu-btn-text-sm">View Menu</span>
+                  </div>
+                </div>
+              </div>
+                <div @click="selectedMenu = 'breakfast'" :class="selectedMenu === 'breakfast' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn">
+                  <div class="menu-btn-content">
+                    <figure class="menu-btn-img">
+                      <img src="./images/menu/breakfast-btn.jpg" alt="CeyFo The Cafe">
+                    </figure>
+                    <div class="menu-btn-text">
+                      Breakfast
+                      <span class="menu-btn-text-sm">View Menu</span>
+                    </div>
+                  </div>
+                </div>
+                <div @click="selectedMenu = 'lunch'" :class="selectedMenu === 'lunch' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn">
+                  <div class="menu-btn-content">
+                    <figure class="menu-btn-img">
+                      <img src="./images/menu/lunch-btn.jpg" alt="CeyFo The Cafe">
+                    </figure>
+                    <div class="menu-btn-text">
+                      Lunch
+                      <span class="menu-btn-text-sm">View Menu</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div @click="selectedMenu = 'dinner'" :class="selectedMenu === 'dinner' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn">Dinner</div> -->
+                <div @click="selectedMenu = 'bar'" :class="selectedMenu === 'bar' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn">
+                  <div class="menu-btn-content">
+                    <figure class="menu-btn-img">
+                      <img src="./images/menu/drinks-btn.jpg" alt="CeyFo The Cafe">
+                    </figure>
+                    <div class="menu-btn-text">
+                      Drinks
+                      <span class="menu-btn-text-sm">View Menu</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div x-show="selectedMenu === 'coffee'" class="menu-item-modal js-menu-modal" style="display: none;">
+              <div @click.outside="selectedMenu = ''" class="menu-item-inner">
+                <span @click="selectedMenu = ''" class="menu-close-btn">
+                  <img src="./images/icons/btn-close.svg" alt="close button">
+                </span>
+                <!-- Coffee Menu Content -->
+                <figure class="menu-items">
+                  <img src="./images/menu/ceyfo-the-cafe.jpg" alt="CeyFo The Cafe">
+                </figure>
+                </div>
+            </div>
+            <div x-show="selectedMenu === 'breakfast'" class="menu-item-modal js-menu-modal" style="display: none;">
+              <div @click.outside="selectedMenu = ''" class="menu-item-inner">
+                <span @click="selectedMenu = ''" class="menu-close-btn">
+                  <img src="./images/icons/btn-close.svg" alt="close button">
+                </span>
+                <!-- Breakfast Menu Content -->
+                <figure class="menu-items">
+                  <img src="./images/menu/ceyfo-breakfast.jpg" alt="CeyFo Breakfast">
+                </figure>
+                </div>
+            </div>
+            <div x-show="selectedMenu === 'lunch'" class="menu-item-modal js-menu-modal" style="display: none;">
+              <div @click.outside="selectedMenu = ''" class="menu-item-inner">
+                <span @click="selectedMenu = ''" class="menu-close-btn">
+                  <img src="./images/icons/btn-close.svg" alt="close button">
+                </span>
+                <!-- Lunch Menu Content -->
+                <figure class="menu-items">
+                  <img src="./images/menu/ceyfo-lunch.jpg" alt="CeyFo Lunch">
+                </figure>
+                </div>
+            </div>
+            <!-- <div x-show="selectedMenu === 'dinner'" class="menu-item-modal js-menu-modal" style="display: none;">
+              Dinner Menu Content
+            </div> -->
+            <div x-show="selectedMenu === 'bar'" class="menu-item-modal js-menu-modal" style="display: none;">
+              <div @click.outside="selectedMenu = ''" class="menu-item-inner">
+                <span @click="selectedMenu = ''" class="menu-close-btn">
+                  <img src="./images/icons/btn-close.svg" alt="close button">
+                </span>
+                <!-- Bar Menu Content -->
+                <figure class="menu-items">
+                  <img src="./images/menu/ceyfo-the-bar.jpg" alt="CeyFo The Bar">
+                </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Caption with background image -->
+  <section class="caption-section caption-sec-2">
+    <div class="section-content">
+      <p class="caption-text">
+        Indulge in the All-Day Experience at CeyFo – From Morning Brews to Elegant <br class="pc-only">Dinners and a Vibrant Bar. Taste the Difference in Every Bite!
+      </p>      
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact" class="contact-section">
+    <div class="section-content">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-inner">
+        <div class="contact-info">
+          <p class="contact-intro">
+            Have questions, need a reservation, or planning an event? We're here to help! Reach out to us through the contact details below or simply fill out our contact form, and we'll get back to you promptly. We look forward to connecting with you!
+          </p>
+          <div class="contact-details">
+            <ul class="contact-details-list">
+              <li class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"/></svg>
+                <span class="contact-text">
+                  095585190
+                </span>
+              </li>
+              <li class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><path fill="#ffffff" d="M32.33 6a2 2 0 0 0-.41 0h-28a2 2 0 0 0-.53.08l14.45 14.39Z" class="clr-i-solid clr-i-solid-path-1"/><path fill="#ffffff" d="m33.81 7.39l-14.56 14.5a2 2 0 0 1-2.82 0L2 7.5a2 2 0 0 0-.07.5v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-.12-.61M5.3 28H3.91v-1.43l7.27-7.21l1.41 1.41Zm26.61 0h-1.4l-7.29-7.23l1.41-1.41l7.27 7.21Z" class="clr-i-solid clr-i-solid-path-2"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+                <span class="contact-text">
+                  ceyfoparnell@gmail.com
+                </span>
+              </li>
+              <li class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+                <span class="contact-text">
+                  G04A, 100 Parnell road, Parnell, Auckland.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form class="mt-8 max-w-md mx-auto">
+              <div class="form-group">
+                  <input type="text" class="form-input" placeholder="Name">
+              </div>
+              <div class="form-group">
+                  <input type="email" class="form-input" placeholder="Email">
+              </div>
+              <div class="form-group">
+                  <textarea class="form-textarea" rows="4" placeholder="Message"></textarea>
+              </div>
+              <button type="submit" class="btn-tertiary" disabled>Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Subscription Form Section -->
+  <!-- <section id="newsletter" class="newsletter-section">
+      <div class="section-content">
+          <h2 class="section-title">Subscribe to our Newsletter</h2>
+          <form class="mt-8 max-w-md mx-auto">
+              <div class="form-group">
+                  <input type="email" class="form-input" placeholder="Email">
+              </div>
+              <button type="submit" class="form-button">Subscribe</button>
+          </form>
+      </div>
+  </section> -->
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="ft-social-btn">
+      <ul class="ft-social-list">
+        <li class="ft-social-item">
+          <a href="https://www.instagram.com/ceyfo.parnell?igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="ft-social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#ffffff" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg>
+          </a>
+        </li>
+        <li class="ft-social-item">
+          <a href="https://www.facebook.com/profile.php?id=61562874516814&mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" class="ft-social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#ffffff" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
+          </a>
+        </li>
+        <li class="ft-social-item">
+          <a href="#" class="ft-social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 16 16"><path fill="#ffffff" d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <p>&copy; 2024 CeyFo. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
