@@ -139,8 +139,31 @@
   </section>
 
   <!-- Online reservation Section -->
-  <!-- <section id="book-table" class="book-table">
-    <div class="booking-container" x-data="{ moreThan8: false }">
+  <section id="book-table" class="book-table">
+    <div class="reservation-container" x-data="{ moreThan8: false }">
+      <div class="reservation-contact">
+        <h3 class="reservation-contact-title">Contact Us</h3>
+        <div class="reservation-contact-info">
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Booking Requests </h4>
+            <p class="work-hrs-phn">+64(123)-456-7899</p>
+            <p class="work-hrs-text">Opens 7.00am to 11.00pm</p>
+            <p class="work-hrs-text">Closed on Mondays</p>
+          </div>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Breakfast Time </h4>
+            <p class="work-hrs-text">7.00am to 10.00am</p>
+          </div>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Lunch Time </h4>
+            <p class="work-hrs-text">11.00am to 3.00pm</p>
+          </div>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Dinner Time </h4>
+            <p class="work-hrs-text">6.00pm to 10.00pm</p>
+          </div>
+        </div>
+      </div>
       <div class="reservation-form">
         <h2 class="reservation-title">Online Reservations</h2>
         <p class="reservation-text">Reservations also can be made through phone.</p>
@@ -152,11 +175,11 @@
                 <div class="form-group-col">
                   <input type="tel" class="form-input" name="phone"  placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
                 </div>
-              </div> -->
-              <!-- <div class="form-group">
+              </div>
+              <div class="form-group">
                 <input type="email" class="form-input" placeholder="Email">
-              </div> -->
-              <!-- <div class="form-group">
+              </div>
+              <div class="form-group">
                 <div class="form-group-col">
                   <select class="form-select" name="head-count" x-on:change="moreThan8 = $event.target.value === 'more'">
                       <option value="">How many person?</option>
@@ -185,31 +208,8 @@
               <p x-show="moreThan8" class="text-red-500">Please contact the Restaurant</p>
           </form>
       </div>
-      <div class="reservation-contact">
-        <h3 class="reservation-contact-title">Contact Us</h3>
-        <div class="reservation-contact-info">
-          <div class="work-hrs">
-            <h4 class="work-hrs-label"> Booking Requests </h4>
-            <p class="work-hrs-phn">+64(123)-456-7899</p>
-            <p class="work-hrs-text">Opens 7.00am to 11.00pm</p>
-            <p class="work-hrs-text">Closed on Mondays</p>
-          </div>
-          <div class="work-hrs">
-            <h4 class="work-hrs-label"> Breakfast Time </h4>
-            <p class="work-hrs-text">7.00am to 10.00am</p>
-          </div>
-          <div class="work-hrs">
-            <h4 class="work-hrs-label"> Lunch Time </h4>
-            <p class="work-hrs-text">11.00am to 3.00pm</p>
-          </div>
-          <div class="work-hrs">
-            <h4 class="work-hrs-label"> Dinner Time </h4>
-            <p class="work-hrs-text">6.00pm to 10.00pm</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- Our Story Section -->
   <section id="about" class="our-story">
@@ -332,6 +332,139 @@
                 </div>
             </div>
         </div>
+    </div>
+  </section>
+
+  <!-- Online reservation Section -->
+  <section id="reservations" class="reservation">
+    <div class="reservation-container" x-data="{ moreThan8: false }">
+      <div class="reservation-form">
+        <h2 class="reservation-title">Online Reservations</h2>
+        <p class="reservation-text">Please select the number of guests and the required date. Please call us for larger parties.</p>
+          <form>
+              <div class="form-group">
+                <div class="form-group-col form-group-col-sm">
+                  <input type="text" class="form-input" name="name" placeholder="Name">
+                </div>
+                <div class="form-group-col form-group-col-sm">
+                  <input type="tel" class="form-input" name="phone"  placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-group-col form-group-col-sm form-group-col-lg">
+                  <input type="email" class="form-input" placeholder="Email (Optional)">
+                </div>
+                <div class="form-group-col form-group-col-sm">
+                  <select class="form-select" name="head-count" x-on:change="moreThan8 = $event.target.value === 'more'">
+                      <option value="">Guest count</option>
+                      <option value="1">1 guest</option>
+                      <option value="2">2 guests</option>
+                      <option value="3">3 guests</option>
+                      <option value="4">4 guests</option>
+                      <option value="5">5 guests</option>
+                      <option value="6">6 guests</option>
+                      <option value="7">7 guests</option>
+                      <option value="8">8 guests</option>
+                      <option value="more">More than 8</option>
+                  </select>
+                </div>
+                <div class="form-group-col form-group-col-sm">
+                  <input type="date" name="reserve-date" class="form-input">
+                </div>
+                <div class="form-group-col form-group-col-sm">
+                  <input type="time" name="reserve-time" class="form-input">
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-group-col form-textarea" rows="4" name="reserve-note" placeholder="Notes (Optional)"></textarea>
+              </div>
+              <button type="button" class="btn-tertiary" x-show="!moreThan8">Check Availability</button>
+              <p x-show="moreThan8" class="guest-count-msg">Please contact the Restaurant for more than ** guests.</p>
+          </form>
+      </div>
+      <div class="reservation-contact">
+        <div class="reservation-contact-info">
+          <h2 class="reservation-title"> Phone Reservations </h2>
+          <div class="work-hrs">
+            <p class="work-hrs-phn">
+              <a href="tel:+6495585190" class="contact-text-phone sp-only" aria-label="Ceyfo Phone Number">
+                Tel: 095585190
+              </a>
+              <span class="contact-text-phone pc-only" aria-label="Ceyfo Phone Number">
+                Tel: 095585190
+              </span>
+            </p>
+            <p class="work-hrs-text">Opens at 7.00am to 11.00pm</p>
+            <p class="work-hrs-text">Closed on Mondays</p>
+          </div>
+          <p class="title-head-secondary">※</p>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Breakfast </h4>
+            <p class="work-hrs-text">7.00am to 10.00am</p>
+          </div>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Lunch </h4>
+            <p class="work-hrs-text">11.00am to 3.00pm</p>
+          </div>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> Dinner </h4>
+            <p class="work-hrs-text">Sorry, Still we are not serving dinner</p>
+          </div>
+          <div class="work-hrs">
+            <h4 class="work-hrs-label"> CeyFo The Bar </h4>
+            <p class="work-hrs-text">6.00pm to 10.00pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Online reservation section with iframe -->
+  <section id="reservations" class="reservation">
+    <div class="section-content">
+      <h2 class="section-title">Reservations</h2>
+      <p class="reservation-intro">
+        Reserve Your Table and Make Every Occasion Special – Book Online for a Seamless Experience.
+      </p>
+      <div class="reservation-container">
+        <div class="reservation-form">
+          <iframe id="eveve" src="https://nz4.eveve.com/tms/datecovers.php?est=Ceyfo" frameborder="0" scrolling="auto" width="100%" height="800" > Please upgrade your browser </iframe>
+        </div>
+        <div class="reservation-contact">
+          <div class="reservation-contact-info">
+            <h2 class="reservation-title"> Phone Reservations </h2>
+            <div class="work-hrs">
+              <p class="work-hrs-phn">
+                <a href="tel:+6495585190" class="contact-text-phone sp-only" aria-label="Ceyfo Phone Number">
+                  Tel: 095585190
+                </a>
+                <span class="contact-text-phone pc-only" aria-label="Ceyfo Phone Number">
+                  Tel: 095585190
+                </span>
+              </p>
+              <p class="work-hrs-text">Opens at 7.00am to 11.00pm</p>
+              <p class="work-hrs-text">Closed on Mondays</p>
+            </div>
+            <p class="title-head-secondary">※</p>
+            <div class="work-hrs">
+              <h4 class="work-hrs-label"> Breakfast </h4>
+              <p class="work-hrs-text">7.00am to 10.00am</p>
+            </div>
+            <div class="work-hrs">
+              <h4 class="work-hrs-label"> Lunch </h4>
+              <p class="work-hrs-text">11.00am to 3.00pm</p>
+            </div>
+            <div class="work-hrs">
+              <h4 class="work-hrs-label"> Dinner </h4>
+              <p class="work-hrs-text">Sorry, Still we are not serving dinner</p>
+            </div>
+            <div class="work-hrs">
+              <h4 class="work-hrs-label"> CeyFo The Bar </h4>
+              <p class="work-hrs-text">6.00pm to 10.00pm</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
