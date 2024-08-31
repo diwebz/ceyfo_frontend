@@ -74,9 +74,12 @@
     }
     .reservation-form input[type="date"] {
       color-scheme: dark;
+      color: #ffffff;
+      -webkit-appearance : none;
     }
     .reservation-form input[type="time"] {
       color-scheme: dark;
+      -webkit-appearance : none;
     }
     .reservation-form .form-input,
     .reservation-form .form-select,
@@ -270,17 +273,17 @@
                   </select>
                 </div>
                 <div class="form-group-col form-group-col-sm">
-                  <input type="date" name="reserve-date" class="form-input">
+                  <input type="date" name="reserve-date" class="form-input" value="2024-09-01">
                 </div>
                 <div class="form-group-col form-group-col-sm">
-                  <input type="time" name="reserve-time" class="form-input">
+                  <input type="time" name="reserve-time" class="form-input" value="18:00">
                 </div>
               </div>
               <div class="form-group">
                 <textarea class="form-group-col form-textarea" rows="4" name="reserve-note" placeholder="Notes (Optional)"></textarea>
               </div>
               <button type="button" class="btn-tertiary" x-show="!moreThan8">Check Availability</button>
-              <p x-show="moreThan8" class="guest-count-msg">Please contact the Restaurant for more than ** guests.</p>
+              <p x-show="moreThan8" class="guest-count-msg">Please contact the Restaurant for more than 8 guests.</p>
           </form>
       </div>
       <div class="reservation-contact">
