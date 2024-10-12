@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name=”format-detection” content="telephone=no">
   <meta name="description" content="Welcome to Ceyfo, where European fusion meets culinary artistry. Our menu is a vibrant blend of flavors, crafted to delight your palate with every bite. Indulge in our elegant dishes, savor our expertly mixed cocktails, and enjoy a perfect cup of coffee in a sophisticated setting. At Ceyfo, we turn every meal into a memorable experience.">
   <meta name="keywords" content="CeyFo, Parnell, Auckland, Bistro, Bar, Coffee, Breakfast, Lunch, Dinner, Drinks, cocktail, mocktail, gin lovers, beer, wine, Place to grab a beer in auckland, Coffee in auckland, Breakfast in auckland, Lunch in auckland, Bar in auckland">
   <meta name="theme-name" content="CeyFo - Auckland" />
@@ -115,7 +116,7 @@
     </div>
   </header>
   <section class="hero-section">
-    <div x-data="{ currentImage: 0, images: ['./images/mv/image1.jpg', './images/mv/image2.jpg', './images/mv/image3.jpg'] }" class="hero-slider">
+    <div x-data="{ currentImage: 0, images: ['./images/mv/image1.jpg', './images/mv/image22.jpg', './images/mv/image3.jpg'] }" class="hero-slider">
       <template x-for="(image, index) in images" :key="index">
         <div x-show="currentImage === index" class="fade hero-bg" :style="'background-image: url(' + image + ')'"></div>
           </template>
@@ -152,7 +153,18 @@
       <p class="menu-intro">Explore our menu for a variety of flavorful dishes and refreshing drinks, all crafted to satisfy your cravings.</p>
       <div x-data="{ selectedMenu: '' }" class="menu-list-wrap">
         <div class="menu-list">
-          <div @click="selectedMenu = 'coffee'" :class="selectedMenu === 'coffee' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn">
+          <div @click="selectedMenu = 'brunch'" :class="selectedMenu === 'brunch' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn menu-btn-col2">
+            <div class="menu-btn-content">
+              <figure class="menu-btn-img">
+                <img src="./images/menu/bottomless-brunch-btn.jpg" alt="CeyFo Bottemless Brunch">
+              </figure>
+              <div class="menu-btn-text">
+                Bottomless Brunch
+                <span class="menu-btn-text-sm">View Menu</span>
+              </div>
+            </div>
+          </div>
+          <div @click="selectedMenu = 'coffee'" :class="selectedMenu === 'coffee' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn menu-btn-col3">
             <div class="menu-btn-content">
               <figure class="menu-btn-img">
                 <img src="./images/menu/coffee-btn.jpg" alt="CeyFo The Cafe">
@@ -163,7 +175,7 @@
               </div>
             </div>
           </div>
-          <div @click="selectedMenu = 'breakfast'" :class="selectedMenu === 'breakfast' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn">
+          <div @click="selectedMenu = 'breakfast'" :class="selectedMenu === 'breakfast' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn menu-btn-col3">
             <div class="menu-btn-content">
               <figure class="menu-btn-img">
                 <img src="./images/menu/breakfast-btn.jpg" alt="CeyFo Breakfast">
@@ -174,7 +186,7 @@
               </div>
             </div>
           </div>
-          <div @click="selectedMenu = 'lunch'" :class="selectedMenu === 'lunch' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn">
+          <div @click="selectedMenu = 'lunch'" :class="selectedMenu === 'lunch' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn menu-btn-col3">
             <div class="menu-btn-content">
               <figure class="menu-btn-img">
                 <img src="./images/menu/lunch-btn.jpg" alt="CeyFo Lunch">
@@ -185,7 +197,7 @@
               </div>
             </div>
           </div>
-          <div @click="selectedMenu = 'bar'" :class="selectedMenu === 'bar' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn">
+          <div @click="selectedMenu = 'bar'" :class="selectedMenu === 'bar' ? 'bg-blue-500 text-white' : 'bg-gray-200'" class="menu-btn menu-btn-col2">
             <div class="menu-btn-content">
               <figure class="menu-btn-img">
                 <img src="./images/menu/drinks-btn.jpg" alt="CeyFo The Bar">
@@ -196,6 +208,48 @@
               </div>
             </div>
           </div>
+        </div>
+        <div x-show="selectedMenu === 'brunch'" class="menu-item-modal js-menu-modal" style="display: none;">
+          <div @click.outside="selectedMenu = ''" class="menu-item-inner menu-item-inner-wide menu-item-inner-brunch">
+            <span @click="selectedMenu = ''" class="menu-close-btn">
+              <img src="./images/icons/btn-close.svg" alt="close button">
+            </span>
+            <div class="menu-content">
+              <div class="menu-content-left">
+                <div class="menu-content-left-inner">
+                  <h3 class="menu-in-text">CeyFo</h3>
+                  <h3 class="menu-content-title">BOTTOMLESS BRUNCH</h3>
+                  <div class="menu-in-info">
+                    <p class="menu-in-text">$58 per person with one meal and unlimited Cocktails.</p>
+                    <h3 class="menu-in-text">Reservation is Essential.</h3>
+                    <p class="menu-in-text menu-in-separator">ー ★★★★★ ー</p>
+                    <span class="menu-in-contact">
+                      <span class="contact-text-email" aria-label="Ceyfo Email">
+                        Email : ceyfoparnell@gmail.com
+                      </span>
+                      <p>
+                        <a href="tel:+6495585190" class="contact-text-phone sp-only" aria-label="Ceyfo Phone Number">
+                          Phone : 095585190
+                        </a>
+                        <span class="contact-text-phone pc-only" aria-label="Ceyfo Phone Number">
+                          Phone : 095585190
+                        </span>
+                      </p>
+                    </span>
+                    <p class="menu-in-text pc-only">Please contact us for reservations or reserve online.</p>
+                    <p>
+                      <a href="#reservations" @click="selectedMenu = ''" class="btn-primary" aria-label="Online Reservations" aria-label="Ceyfo Online Reservations">Online Reservations</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-content-right">
+                <figure class="menu-items">
+                  <img src="./images/menu/ceyfo-bottomless-brunch.jpg" alt="CeyFo The Bar">
+                </figure>
+              </div>
+              </div>
+            </div>
         </div>
         <div x-show="selectedMenu === 'coffee'" class="menu-item-modal js-menu-modal" style="display: none;">
           <div @click.outside="selectedMenu = ''" class="menu-item-inner">
@@ -255,8 +309,13 @@
             <h2 class="reservation-title"> Phone Reservations </h2>
             <div class="work-hrs">
               <p class="work-hrs-phn">
-                <span class="contact-text-phone" aria-label="Ceyfo Phone Number">
-                  Tel: 095585190
+                <span class="contact-text">
+                  <a href="tel:+6495585190" class="contact-text-phone sp-only" aria-label="Ceyfo Phone Number">
+                  Call Us : 095585190
+                  </a>
+                  <span class="contact-text-phone pc-only" aria-label="Ceyfo Phone Number">
+                  Call Us : 095585190
+                  </span>
                 </span>
               </p>
               <p class="work-hrs-text">Opens at 7.00am to 11.00pm</p>
