@@ -544,7 +544,7 @@ iframe#eveve {
   position: relative;
   text-align: center;
   transition: opacity 0.3s;
-  height: 150px;
+  height: 148px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -554,6 +554,9 @@ iframe#eveve {
 }
 .menu-btn-img {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .menu-btn-img::before {
   position: absolute;
