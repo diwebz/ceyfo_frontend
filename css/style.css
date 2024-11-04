@@ -606,7 +606,7 @@ iframe#eveve {
   top: 50%;
   left: 50%;
   width: 93%;
-  height: auto;
+  height: 83%;
   overflow-y: scroll;
   font-size: 50px;
   color: white;
@@ -646,7 +646,7 @@ iframe#eveve {
   padding: 16px 8px 24px;
   display: flex;
   flex-direction: column;
-  height: -webkit-fill-available;
+  height: 100%;
   align-items: center;
   justify-content: flex-start;
 }
@@ -1031,6 +1031,7 @@ h3.menu-in-text {
   }
   .menu-content-left-inner {
     padding: 25px 20px 24px;
+    height: -webkit-fill-available;
   }
   .menu-in-text {
     font-size: 1.2rem;
