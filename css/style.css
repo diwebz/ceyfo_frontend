@@ -540,6 +540,9 @@ iframe#eveve {
 .menu-btn-col3 {
   flex: 1 1 30%;
 }
+.menu-btn-col4 {
+  flex: 1 1 22.5%;
+}
 .menu-btn-content {
   position: relative;
   text-align: center;
@@ -565,7 +568,7 @@ iframe#eveve {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.4);
 }
 .menu-btn-text {
   width: 100%;
@@ -610,6 +613,9 @@ iframe#eveve {
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
+.menu-item-inner .menu-items {
+  background-color: #fefcf3;
+}
 .menu-item-inner-brunch {
   border-radius: 10px;
   height: 85%;
@@ -640,13 +646,13 @@ iframe#eveve {
   padding: 16px 8px 24px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: -webkit-fill-available;
   align-items: center;
   justify-content: flex-start;
 }
 .menu-content-right {
   flex: 1 1 60%;
-  background-color: #fefcf3;
+  /* background-color: #fefcf3; */
   overflow-y: scroll;
   height: 100%;
 }
@@ -988,13 +994,16 @@ h3.menu-in-text {
     flex-direction: row;
   }
   .menu-btn:nth-child(1) {
-    order: 3;
+    order: 1;
   }
-  .menu-btn:nth-child(5) {
+  .menu-btn:nth-child(3) {
+    order: 2;
+  }
+  .menu-btn:nth-child(4) {
     order: 4;
   }
   .menu-btn-content {
-    height: 170px;
+    height: 220px;
   }
   .menu-item-modal {
     padding: 0 0;
@@ -1016,7 +1025,8 @@ h3.menu-in-text {
   }
   .menu-content-left {
     flex: 1 1 37%;
-    height: 70vh;
+    height: 100%;
+    height: -webkit-fill-available;
     padding: 24px;
   }
   .menu-content-left-inner {
