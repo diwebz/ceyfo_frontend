@@ -224,7 +224,7 @@ header {
   line-height: 1.5;
 }
 .hero-text-lg {
-  font-size: 0.925rem;
+  font-size: 1rem;
   font-weight: bold;
   padding-top: 8px;
   display: block;
@@ -935,8 +935,9 @@ h3.menu-in-text {
     letter-spacing: 5px;
   }
   .hero-text {
-    font-size: 0.9rem;
+    font-size: 1.25rem;
     width: 52%;
+    max-width: 700px;
     margin: auto auto 24px;
   }
   .hero-text-lg {
