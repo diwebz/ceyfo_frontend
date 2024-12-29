@@ -199,7 +199,7 @@ header {
 }
 .hero-slider .hero-caption {
   position: relative;
-  top: 32%;
+  top: 28%;
   text-align: center;
   z-index: 3;
   padding: 0 24px;
@@ -222,6 +222,12 @@ header {
   letter-spacing: 1.5px;
   margin-bottom: 24px;
   line-height: 1.5;
+}
+.hero-text-lg {
+  font-size: 0.925rem;
+  font-weight: bold;
+  padding-top: 8px;
+  display: block;
 }
 .btn-primary {
   display: inline-flex;
@@ -922,7 +928,7 @@ h3.menu-in-text {
     opacity: 0.6;
   }
   .hero-slider .hero-caption {
-    top: 41%;
+    top: 38%;
   }
   .hero-caption h1 {
     font-size: 3rem;
@@ -930,6 +936,14 @@ h3.menu-in-text {
   }
   .hero-text {
     font-size: 0.9rem;
+    width: 52%;
+    margin: auto auto 24px;
+  }
+  .hero-text-lg {
+    font-size: 0.925rem;
+    font-weight: bold;
+    padding-top: 8px;
+    display: block;
   }
   .btn-primary:hover {
     background-color: #dca046;
