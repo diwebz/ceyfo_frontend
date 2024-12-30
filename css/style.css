@@ -199,7 +199,7 @@ header {
 }
 .hero-slider .hero-caption {
   position: relative;
-  top: 27%;
+  top: 28%;
   text-align: center;
   z-index: 3;
   padding: 0 24px;
@@ -217,7 +217,7 @@ header {
   font-style: normal;
 }
 .hero-text {
-  font-size: 0.8rem;
+  font-size: 0.825rem;
   color: #fff;
   letter-spacing: 1.5px;
   margin-bottom: 24px;
@@ -935,13 +935,13 @@ h3.menu-in-text {
     letter-spacing: 5px;
   }
   .hero-text {
-    font-size: 1.25rem;
-    width: 52%;
+    font-size: 0.925rem;
+    width: 45%;
     max-width: 700px;
     margin: auto auto 24px;
   }
   .hero-text-lg {
-    font-size: 0.925rem;
+    font-size: 1.25rem;
     font-weight: bold;
     padding-top: 8px;
     display: block;
